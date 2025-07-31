@@ -1,0 +1,12 @@
+services:
+  jyotish_api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile.improved
+    container_name: jyotish_api
+    ports:
+      - "9393:9393"
+    volumes:
+      - ./api:/var/www/api
+      - /var/www/api/vendor
+      - /var/www/api/swetest/src  # Swiss Ephemeris는 이미 빌드되어 있음

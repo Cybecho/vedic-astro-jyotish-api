@@ -1,0 +1,8 @@
+services:
+  jyotish_api:
+    image: jyotish-api:ready-to-use  # 미리 빌드된 이미지 사용
+    container_name: jyotish_api
+    ports:
+      - "9393:9393"
+    restart: unless-stopped
+    # 볼륨 마운트 불필요 (이미 빌드됨)

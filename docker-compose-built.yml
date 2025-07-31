@@ -1,0 +1,10 @@
+services:
+  jyotish_api:
+    image: jyotish-api:built  # 미리 빌드된 이미지 사용
+    container_name: jyotish_api
+    ports:
+      - "9393:9393"
+    volumes:
+      - ./api:/var/www/api
+      - /var/www/api/vendor
+      - /var/www/api/swetest/src  # Swiss Ephemeris 빌드 파일 보존
